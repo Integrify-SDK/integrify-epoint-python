@@ -4,7 +4,7 @@
 <p align="center">
     <em>Integrify API inteqrasiyalarını rahatlaşdıran sorğular kitabaxanasıdır. Bu kitabxana EPoint inteqrasiyası üçün nəzərdə tutulmuşdur.</em>
 </p>
-<p  style='display:flex;flex-wrap:wrap;gap:5px;width:70%;justify-content:flex-start;margin: 0 auto;'>
+<p align="center">
 <a href="https://github.com/Integrify-SDK/integrify-epoint-python/actions/workflows/test.yml" target="_blank">
     <img src="https://github.com/Integrify-SDK/integrify-epoint-python/actions/workflows/test.yml/badge.svg?branch=main" alt="Test">
 </a>
