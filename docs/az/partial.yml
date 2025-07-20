@@ -1,0 +1,8 @@
+- EPoint:
+  - Ümumi məlumat: "integrations/epoint/about.md"
+  - API Referansı:
+    - API Klient: "integrations/epoint/api-reference/client.md"
+    - Schemas:
+      - Response: "integrations/epoint/api-reference/response.md"
+      - Callback: "integrations/epoint/api-reference/callback.md"
+    - Köməkçi funksiyalar: "integrations/epoint/api-reference/helper-functions.md"
