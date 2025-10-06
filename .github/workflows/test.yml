@@ -108,6 +108,9 @@ jobs:
         with:
           path: .venv
           key: venv-Linux-3.9-${{ hashFiles('pyproject.toml') }}
+      - name: Install dependencies
+        if: steps.cached-uv-dependencies.outputs.cache-hit != 'true'
+        run: uv sync --no-dev --no-group=docs
       #----------------------------------------------
       - name: Get coverage files
         uses: actions/download-artifact@v4
