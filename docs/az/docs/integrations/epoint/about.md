@@ -4,9 +4,7 @@
     Bu sorğulardan istifadə etmək üçün, bu dəyərləri "environment variable"-larına əlavə etməlisiniz: `EPOINT_PUBLIC_KEY`, `EPOINT_PRIVATE_KEY`
 
 ???+ note
-    EPoint interfeysinin dilini dəyişmək istəyirsinizsə, `EPOINT_INTERFACE_LANG` "environment variable"-na dəyər verin. Default olaraq, Azərbaycan dili olacaq.
-
-    Sorğular uğurlu və ya uğursuz olduqda, spesifik URL-ə yönləndirmək istəyirsinizsə, bu dəyişənlərə də mühit levelində dəyər verin: `EPOINT_SUCCESS_REDIRECT_URL`, `EPOINT_FAILED_REDIRECT_URL`
+    Mühit dəyişənləri haqqında [burdan](./env.md) oxuya bilərsiniz.
 
 ## Rəsmi Dokumentasiya (v1.0.3) { #official-documentation }
 
