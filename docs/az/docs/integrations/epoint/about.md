@@ -1,10 +1,7 @@
 # EPoint
 
 ???+ warning
-    Bu sorğulardan istifadə etmək üçün, bu dəyərləri "environment variable"-larına əlavə etməlisiniz: `EPOINT_PUBLIC_KEY`, `EPOINT_PRIVATE_KEY`
-
-???+ note
-    Mühit dəyişənləri haqqında [burdan](./env.md) oxuya bilərsiniz.
+    Bu sorğulardan istifadə edə bilmək üçün, düzgün "environment variable"-ları quraşdırmalısınız. Daha ətraflı [burdan](./env.md) oxuya bilərsiniz.
 
 ## Rəsmi Dokumentasiya (v1.0.3) { #official-documentation }
 
