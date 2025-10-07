@@ -1,4 +1,6 @@
-# Main
+# EPoint sorğu cavabı schema-ları
+
+## Main
 
 ::: integrify.epoint.schemas.response.MinimalResponseSchema
 
@@ -14,6 +16,6 @@
 
 ::: integrify.epoint.schemas.response.SplitPayWithSavedCardResponseSchema
 
-# Extra
+## Extra
 
 ::: integrify.epoint.schemas.response.BaseWithCodeSchema

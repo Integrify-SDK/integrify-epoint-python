@@ -3,32 +3,32 @@ repos:
     hooks:
       - id: format
         name: format
-        entry: make format
         language: system
-        pass_filenames: false
+        files: \.py
+        entry: duty format
       - id: lint
         name: lint
-        entry: make lint
         language: system
-        pass_filenames: false
+        files: \.py
+        entry: duty lint
       - id: typecheck
         name: typecheck
-        entry: make type-check
         language: system
-        pass_filenames: false
+        files: \.py
+        entry: duty type-check
       - id: secure
         name: secure
-        entry: make secure
+        entry: duty secure
         language: system
         pass_filenames: false
       - id: docs
         name: docs
-        entry: make docs
+        entry: duty docs
         language: system
         pass_filenames: false
       - id: test
         name: test
-        entry: make test
+        entry: duty test
         language: system
         pass_filenames: false
 

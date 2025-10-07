@@ -67,24 +67,32 @@ def setup(ctx: context.Context) -> None:
 
 
 @duty
-def format(ctx: context.Context):
+def format(ctx: context.Context, *files):  # pylint: disable=redefined-builtin
     """Format the files."""
-    ctx.run('ruff check --fix-only --exit-zero', title='Auto-fixing code')
-    ctx.run('ruff format', title='Formatting code')
+
+    arg = ' '.join(files if files else SRC)
+
+    ctx.run(f'ruff check {arg} --fix-only --exit-zero', title='Auto-fixing code')
+    ctx.run(f'ruff format {arg}', title='Formatting code')
 
 
 @duty
-def lint(ctx: context.Context):
+def lint(ctx: context.Context, *files):
     """Lint the files."""
-    ctx.run('ruff check', title='Linting with ruff check')
-    ctx.run('ruff format --check', title='Linting with ruff format')
-    ctx.run('pylint .', title='Linting with pylint')
+
+    arg = ' '.join(files if files else SRC)
+
+    ctx.run(f'ruff check {arg}', title='Linting with ruff check')
+    ctx.run(f'ruff format {arg} --check', title='Linting with ruff format')
+    ctx.run(f'pylint {arg}', title='Linting with pylint')
 
 
 @duty
-def type_check(ctx: context.Context):
+def type_check(ctx: context.Context, *files):
     """Type check the files."""
-    ctx.run('mypy .', title='Type checking with mypy')
+    arg = ' '.join(files if files else SRC)
+
+    ctx.run(f'mypy {arg}', title='Type checking with mypy')
 
 
 @duty
@@ -140,7 +148,7 @@ def secure(ctx: context.Context):
 
 
 @duty(pre=['format', 'lint', 'test', 'docs'])
-def all():
+def all():  # pylint: disable=redefined-builtin
     """Run all main tasks: format, lint, test, docs."""
 
 
@@ -158,35 +166,3 @@ def clean(ctx: context.Context):  # pylint: disable=unused-argument
             shutil.rmtree(dirpath, ignore_errors=True)
 
     print('Done.')  # noqa: T201
-
-
-@duty
-def new_integration(ctx: context.Context, name: str):
-    # pylint: disable=all
-
-    """Create files for new integration."""
-    os.makedirs(f'src/integrify/{name}/schemas', exist_ok=True)
-    os.makedirs(f'tests/{name}', exist_ok=True)
-
-    for lang in DOCS_LANGS:
-        os.makedirs(f'docs/{lang}/docs/integrations/{name}', exist_ok=True)
-
-    # Create files in src/integrify/${name}
-    open(f'src/integrify/{name}/__init__.py', 'a').close()
-    open(f'src/integrify/{name}/client.py', 'a').close()
-    open(f'src/integrify/{name}/handlers.py', 'a').close()
-    open(f'src/integrify/{name}/env.py', 'a').close()
-
-    # Create files in src/integrify/${name}/schemas
-    open(f'src/integrify/{name}/schemas/__init__.py', 'a').close()
-    open(f'src/integrify/{name}/schemas/request.py', 'a').close()
-    open(f'src/integrify/{name}/schemas/response.py', 'a').close()
-
-    # Create files in tests/${name}
-    open(f'tests/{name}/__init__.py', 'a').close()
-    open(f'tests/{name}/conftest.py', 'a').close()
-    open(f'tests/{name}/mocks.py', 'a').close()
-
-    # Create files in docs/${lang}/docs/${name}
-    open(f'docs/{lang}/docs/integrations/{name}/about.md', 'a').close()
-    open(f'docs/{lang}/docs/integrations/{name}/api-reference.md', 'a').close()
