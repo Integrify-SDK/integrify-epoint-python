@@ -48,11 +48,12 @@ class BaseResponseSchema(MinimalResponseSchema):
 
 class BaseWithCodeSchema(BaseResponseSchema):
     code: Optional[str] = None
-    """Bankın cavab kodu. 3 rəqəmli koddan, xəta/uğur mesajına çevrilir."""
+    """Bankın 3 rəqəmli cavab kodu."""
 
     @field_validator('code', mode='before')
     @classmethod
-    def code_to_msg(cls, v: Optional[str] = None) -> Optional[str]:  # pylint: disable=missing-function-docstring
+    def code_to_msg(cls, v: Optional[str] = None) -> Optional[str]:
+        """3 rəqəmli koddan, xəta/uğur mesajına çevrilir."""
         return Code[v] if v else None
 
 
