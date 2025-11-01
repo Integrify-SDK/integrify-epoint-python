@@ -1,4 +1,4 @@
-# EPoint köməkçi funksiyaları
+# Köməkçi funksiyalar
 
 ::: integrify.epoint.helpers.decode_callback_data
     handler: python
