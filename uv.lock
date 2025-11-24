@@ -669,7 +669,7 @@ wheels = [
 
 [[package]]
 name = "integrify-epoint"
-version = "1.0.0"
+version = "1.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "integrify-core" },
@@ -705,7 +705,7 @@ gh = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "integrify-core", specifier = ">=1.0.5,<2" }]
+requires-dist = [{ name = "integrify-core", specifier = "==1.0.5" }]
 
 [package.metadata.requires-dev]
 dev = [
